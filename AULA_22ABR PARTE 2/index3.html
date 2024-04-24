@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SENAI() {
+            $usuario = this.FORM1.Usuário.value;
+            $Senha = this.FORM1.Senha.value;
+
+            if ($usuario.length > 4 && $Senha.length > 5) {
+                window.location.href = 'http://127.0.0.1:5500/index.html';
+            } else {
+                window.location.href = 'http://127.0.0.1:5500/index2.html';
+            }
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <img src="img/senas.png" width="25%"><br>
+        <table border="2">
+            <td>
+                <form action="" method="post" name="FORM1" onsubmit="return SENAI()">
+                    Usuário: <input type="text" name="Usuário"><br><br>
+                    Senha: <input type="password" name="Senha"><br><br>
+                    <input type="submit" name="Enviar">
+                    <input type="reset" name="Limpar">
+            </td>
+    </center>
+    </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SENAI() {
+             $Nome = this.FORM1.Nome.value;
+             $Idade = this.FORM1.Idade.value;
+             $Sexo = this.FORM1.sexo.value.toLowerCase();
+             $Curso = this.FORM1.Fcurso.value.toLowerCase();
+            if ($Curso == 1) {
+                $Curso = "DS";
+            }
+            if ($Curso == 2) {
+                $Curso = "Mecânica";
+            }
+            if ($Curso == 3) {
+                $Curso = "Engenharia Elétrica";
+            }
+            if ($Curso == 4) {
+                $Curso = "Engenharia de Hardware";
+            }
+
+            var $Turno = this.FORM1.Fturno.value;
+            var $qtd = $Nome.length;
+            if (($Idade > 15) && ($qtd > 2) && ($Sexo != "") &&($Curso!="")) {
+                window.alert("Entrou com sucesso!");
+                document.write("<center> <font size='5'> Bem vindo!<br> <img src='img/sucess.jpg'><br>");
+                document.write("<table border='1'>");
+                document.write("<tr>");
+                document.write("<td>", "Nome", "</td>");
+                document.write("<td>", "Idade", "</td>");
+                document.write("<td>", "Sexo", "</td>");
+                document.write("<td>", "Curso", "</td>");
+                document.write("</tr>");
+
+                document.write("<tr>");
+                document.write("<td>", $Nome, "</td>");
+                document.write("<td>", $Idade, "</td>");
+                document.write("<td>", $Sexo, "</td>");
+                document.write("<td>", $Curso, "</td>");
+                document.write("</tr>");
+                document.write("</table>");
+            } else {
+                alert("Algum dado colocado está incorreto!");
+                document.write("<div style='text-align:center; font-size: 20px;'> Acesso Negado!<br> <img src='img/x.jpg'></div>");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <img src="img/senas.png" width="25%"><br>
+        <form action="" method="post" name="FORM1" onsubmit="return SENAI()">
+            <table border="2">
+                <td>
+            Nome: <input type="text" name="Nome"><br><br>
+            Idade: <input type="number" name="Idade" maxlength="3"><br>
+            Sexo: <input type="radio" name="sexo" value="Masculino">Masculino
+            <input type="radio" name="sexo" value="Feminino">Feminino<br><br>
+            Curso: <select name="Fcurso">
+                <option value="">[escolha] </option>
+                <option value="1">DS</option>
+                <option value="2">Mecânica</option>
+                <option value="3">Engenharia Elétrica</option>
+                <option value="4">Engenharia de Hardware</option>
+            </select>
+            <br><br> Turno:<select name="Fturno"><br><br>
+                <option value="1">Manhã</option>
+                <option value="2">Tarde</option>
+                <option value="3">Noite</option>
+            </select><br><br>
+            <input type="submit" name="Enviar">
+            <input type="reset" name="Limpar">
+            </td>
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>
+```
